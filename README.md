@@ -14,6 +14,29 @@ Learned how data flows in React from parent to child. To send data from child to
 
 ##  Props drilling and Context API
 Learned what props drilling is and why it becomes a problem when data is needed by deep components. Used Context API to avoid passing props through unnecessary components. Also learned when to use props and when context is actually needed.
+##  useReducer (state management concept)
+Learned why `useReducer` exists and when it should be used instead of `useState`.
+Understood the reducer pattern: action → reducer → new state.
+Saw how related states (loading, error, form data) can be managed in one place.
+Also learned that `useReducer` is useful only when state logic becomes complex,
+not just because there are multiple states.
+
+##  Custom Hooks & useEffect basics
+
+Learned how to create custom hooks to reuse logic across components.
+Built a custom API hook and understood how `useEffect` works after render.
+Learned about dependency arrays, when effects run, and how cleanup works.
+Also understood common mistakes like calling hooks conditionally
+and why state updates are asynchronous in React.
+
+##  Real-world useEffect (Search feature)
+Built a real search feature using `useEffect` that reacts to user input.
+Implemented API fetching, query-based filtering, loading, error,
+and empty-result states.
+Learned how to guard effects, avoid unnecessary calls,
+and verify state updates through UI instead of console logs.
+This day focused on writing practical, production-style React code.
+`
 
 
 
