@@ -50,8 +50,12 @@ Learned how to design custom hooks, follow the Rules of Hooks,
 and keep components clean by separating logic from UI.
 Used the debounced value to trigger API calls with useEffect,
 making the search feature more readable, reusable, and scalable.
-
-
+## useMemo & useCallback (performance hooks)
+Learned the real purpose of useMemo and useCallback instead of using them blindly.
+Understood that useMemo is used to cache expensive calculations so they do not
+run again on every render if inputs have not changed.
+Learned that useCallback is used to keep function references stable when passing
+functions to memoized child components, to avoid unnecessary re-renders.
 
 
 # React + Vite
