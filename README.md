@@ -56,7 +56,13 @@ Understood that useMemo is used to cache expensive calculations so they do not
 run again on every render if inputs have not changed.
 Learned that useCallback is used to keep function references stable when passing
 functions to memoized child components, to avoid unnecessary re-renders.
+## Component Design & Architecture
 
+Learned the difference between smart (container) and dumb (presentational)
+components in React. Understood that smart components handle state, logic,
+API calls and decisions, while dumb components only focus on UI and receive
+data via props. Refactored UserSearch into smaller components to improve
+readability, reusability and scalability without overengineering.
 
 # React + Vite
 
