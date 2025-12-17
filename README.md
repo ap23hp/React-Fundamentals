@@ -36,7 +36,21 @@ and empty-result states.
 Learned how to guard effects, avoid unnecessary calls,
 and verify state updates through UI instead of console logs.
 This day focused on writing practical, production-style React code.
-`
+
+## Debounce & performance optimization
+Learned the concept of debouncing and why it is needed to improve performance.
+Understood that debounce is used to delay expensive operations like API calls
+until the user stops typing. Implemented debouncing using setTimeout and
+clearTimeout inside useEffect to avoid unnecessary repeated API calls.
+Learned that debounce is a UX and performance decision, not just a technical trick.
+
+##  Custom Hook (useDebounce)
+Refactored debounce logic into a reusable custom hook called useDebounce.
+Learned how to design custom hooks, follow the Rules of Hooks,
+and keep components clean by separating logic from UI.
+Used the debounced value to trigger API calls with useEffect,
+making the search feature more readable, reusable, and scalable.
+
 
 
 
