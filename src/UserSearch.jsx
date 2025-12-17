@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-
+import useDebounce from "./hooks/useDebounce";
 export default function UserSearch() {
   const [query, setQuery] = useState("");
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const debouncedQuery = useDebounce(query, 500);
 
   useEffect(() => {
     async function fetchApi() {
-      if (query === "") {
+      if (debouncedQuery === "") {
         setUsers([]);
         return;
       } else {
@@ -19,7 +20,7 @@ export default function UserSearch() {
           let response = await api.json();
 
           let filteredUsers = response.filter((user) =>
-            user.name.toLowerCase().includes(query.toLowerCase())
+            user.name.toLowerCase().includes(debouncedQuery.toLowerCase())
           );
           setUsers(filteredUsers);
           setError(null);
@@ -31,8 +32,18 @@ export default function UserSearch() {
         }
       }
     }
+
+    //   const timerId = setTimeout(() => {
+    //     // 👇 YAHAN API / FILTER LOGIC AAYEGA
+    //     fetchApi();
+    //     console.log("Debounce happening")
+    //   }, 500);
+
+    //   return () => {
+    //     clearTimeout(timerId);
+    //   };
     fetchApi();
-  }, [query]);
+  }, [debouncedQuery]);
   return (
     <>
       <input
@@ -43,9 +54,7 @@ export default function UserSearch() {
       />
       {loading && <h4>Loading............</h4>}
       {error && <p>{error}</p>}
-      {query && users.length === 0 && !loading && (
-  <p>No users found</p>
-)}
+      {query && users.length === 0 && !loading && <p>No users found</p>}
       {users.length > 0 && (
         <ul>
           {users.map((user) => (
